@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "542152210497",
+    "project_id": "banka-4",
+    "storage_bucket": "banka-4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542152210497:android:2c50a34798e4866f85aec0",
+        "android_client_info": {
+          "package_name": "rs.raf.banka_4"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJPPqGgN42oL05k_-A0UYmcnDHAzMiAt0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
