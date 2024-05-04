@@ -12,5 +12,13 @@
     <string name="Nasa_mbanka">Naša mBanka</string>
     <string name="stanovnistvo">za stanovništvo</string>
     <string name="biznis">Biznis</string>
+    <string name="prva_valuta">Prva valuta</string>
+    <string name="druga_valuta">Druga valuta</string>
     <string name="brzo_lako_sigurno">Brzo, lako i sigurno</string>
+    <string name="raspolozivo">Raspoloživo</string>
+    <string name="pregled_transakcija">Pregled transakcija</string>
+    <string name="pregled_svih_transakcija">Pregledaj sve transakcije</string>
+    <string name="menjacnica">Menjačnica</string>
+    <string name="izmena">Izvrši izmenu valuta</string>
+    <string name="kursna_lista">Kursna lista</string>
 </resources>

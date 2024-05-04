@@ -1,20 +1,19 @@
 package rs.raf.banka_4.login
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.view.GestureDetector
-import android.view.MotionEvent
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import rs.raf.banka_4.R
 import rs.raf.banka_4.databinding.ActivityLoginBinding
+import rs.raf.banka_4.user.UserActivity
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    private var lastChecked:Int = -1;
+    private var lastChecked:Int = -1
     //TODO bilo bi lepo napraviti gesture recogniser da radi sa butonima
 
 
@@ -33,22 +32,28 @@ class LoginActivity : AppCompatActivity() {
         val lica = binding.activityLoginTextLica
         val username = binding.activityLoginUsername
         val password = binding.activityLoginPassword
+        val buton = binding.activityLoginButton
         lastChecked = fizickaButton.id
         fizickaButton.isClickable = false
 
 
         // Set color for the top status bar
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        } else {
-            // Set color for lower versions
-        }
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         // Set color for the bottom navigation bar if supported
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             window.navigationBarColor = resources.getColor(R.color.white)
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
             window.statusBarColor = resources.getColor(R.color.loading)
+        }
+
+        buton.setOnClickListener {
+            Handler().postDelayed({
+                // Create intent to start LoginActivity
+                val intent = Intent(this@LoginActivity, UserActivity::class.java)
+                startActivity(intent)
+                finish() // Finish SplashActivity to prevent it from being accessible via back button
+            }, 0)
         }
 
         fizickaButton.setOnCheckedChangeListener{buttonView, isChecked ->

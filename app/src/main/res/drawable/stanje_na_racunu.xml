@@ -1,0 +1,17 @@
+<!-- semi_circle_progress_left_to_right.xml -->
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="180"
+    android:toDegrees="180">
+
+    <shape
+        android:shape="ring"
+        android:useLevel="true"
+        android:innerRadiusRatio="3"
+        android:thickness="40dp">
+        <solid android:color="@color/loading_darker"/>
+        <stroke
+        android:width="2px"
+        android:color="@color/black" />
+    </shape>
+
+</rotate>
