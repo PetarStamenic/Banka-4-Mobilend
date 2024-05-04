@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Banka-4</string>
+    <string name="title_activity_splash">activity_splash</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="naziv_banke">Naša\nbanka</string>
+    <string name="fizicka">Fizička lica</string>
+    <string name="pravna">Pravna lica</string>
+    <string name="dobro_dosli">Dobro došli</string>
+    <string name="Nasa_mbanka">Naša mBanka</string>
+    <string name="stanovnistvo">za stanovništvo</string>
+    <string name="biznis">Biznis</string>
+    <string name="brzo_lako_sigurno">Brzo, lako i sigurno</string>
 </resources>

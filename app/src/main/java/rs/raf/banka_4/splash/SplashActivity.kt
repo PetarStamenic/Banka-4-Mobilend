@@ -1,46 +1,28 @@
-package rs.raf.banka_4
+package rs.raf.banka_4.splash
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import rs.raf.banka_4.ui.theme.Banka4Theme
+import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
+import rs.raf.banka_4.databinding.ActivitySplashBinding
+import rs.raf.banka_4.login.LoginActivity
 
-class activity_splash : ComponentActivity() {
+@SuppressLint("CustomSplashScreen")
+class SplashActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            Banka4Theme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
+        supportActionBar!!.hide()
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        Handler().postDelayed({
+            // Create intent to start LoginActivity
+            val intent = Intent(this@SplashActivity, LoginActivity::class.java)
+            startActivity(intent)
+            finish() // Finish SplashActivity to prevent it from being accessible via back button
+        }, 2000)
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Banka4Theme {
-        Greeting("Android")
-    }
 }
