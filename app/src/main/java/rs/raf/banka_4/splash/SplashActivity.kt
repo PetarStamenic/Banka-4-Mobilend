@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import rs.raf.banka_4.databinding.ActivitySplashBinding
 import rs.raf.banka_4.login.LoginActivity
@@ -13,6 +14,7 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.setFlags(0x00000400, 0x00000400)
         supportActionBar!!.hide()
         binding = ActivitySplashBinding.inflate(layoutInflater)
         val view = binding.root
@@ -24,5 +26,6 @@ class SplashActivity : AppCompatActivity() {
             finish() // Finish SplashActivity to prevent it from being accessible via back button
         }, 2000)
     }
+
 
 }

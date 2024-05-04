@@ -7,8 +7,7 @@
     </item>
     <item android:state_checked="false">
         <shape android:shape="rectangle">
-            <corners android:radius="10dp" /> <!-- Adjust the radius as needed for the desired roundness -->
-            <solid android:color="@color/golden_darker" /> <!-- Define the background color when unchecked -->
+            <solid android:color="@android:color/transparent" /> <!-- Define the background color when unchecked -->
         </shape>
     </item>
 </selector>

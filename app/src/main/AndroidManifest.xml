@@ -15,12 +15,10 @@
         <activity
             android:name=".login.LoginActivity"
             android:exported="false"
-            android:label="@string/title_activity_main"
             android:theme="@style/Theme.Banka4" />
         <activity
             android:name=".splash.SplashActivity"
             android:exported="true"
-            android:label="@string/title_activity_splash"
             android:theme="@style/Theme.Banka4">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

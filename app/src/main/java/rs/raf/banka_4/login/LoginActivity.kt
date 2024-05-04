@@ -1,6 +1,12 @@
 package rs.raf.banka_4.login
 
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.view.GestureDetector
+import android.view.MotionEvent
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import rs.raf.banka_4.R
 import rs.raf.banka_4.databinding.ActivityLoginBinding
@@ -9,6 +15,9 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private var lastChecked:Int = -1;
+    //TODO bilo bi lepo napraviti gesture recogniser da radi sa butonima
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar!!.hide()
@@ -25,10 +34,28 @@ class LoginActivity : AppCompatActivity() {
         val username = binding.activityLoginUsername
         val password = binding.activityLoginPassword
         lastChecked = fizickaButton.id
+        fizickaButton.isClickable = false
+
+
+        // Set color for the top status bar
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        } else {
+            // Set color for lower versions
+        }
+
+        // Set color for the bottom navigation bar if supported
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            window.navigationBarColor = resources.getColor(R.color.white)
+            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+            window.statusBarColor = resources.getColor(R.color.loading)
+        }
 
         fizickaButton.setOnCheckedChangeListener{buttonView, isChecked ->
             if(isChecked){
                 if(lastChecked != buttonView.id){
+                    fizickaButton.isClickable = false
+                    pravnaButton.isClickable = true
                     pravnaButton.isChecked = false
                     lastChecked = buttonView.id
                     //BANKA-4
@@ -44,12 +71,16 @@ class LoginActivity : AppCompatActivity() {
                     username.setBackgroundResource(R.drawable.round_edit_text_golden)
                     //password
                     password.setBackgroundResource(R.drawable.round_edit_text_golden)
+                    //statusbar
+                    window.statusBarColor = resources.getColor(R.color.loading)
                 }
         }}
 
         pravnaButton.setOnCheckedChangeListener{buttonView, isChecked ->
             if(isChecked){
                 if(lastChecked != buttonView.id){
+                    fizickaButton.isClickable = true
+                    pravnaButton.isClickable = false
                     fizickaButton.isChecked = false
                     lastChecked = buttonView.id
 
@@ -66,8 +97,10 @@ class LoginActivity : AppCompatActivity() {
                     username.setBackgroundResource(R.drawable.rounde_edit_text_red)
                     //password
                     password.setBackgroundResource(R.drawable.rounde_edit_text_red)
-                }
+                    //statusbar
+                    window.statusBarColor = resources.getColor(R.color.golden)
                 }
             }
         }
     }
+}
