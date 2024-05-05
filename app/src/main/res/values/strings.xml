@@ -21,4 +21,6 @@
     <string name="menjacnica">Menjačnica</string>
     <string name="izmena">Izvrši izmenu valuta</string>
     <string name="kursna_lista">Kursna lista</string>
+    <string name="credit">Treba vam kredit\nza 30 minuta?\nstvarno može.</string>
+    <string name="vise">Saznaj više</string>
 </resources>
