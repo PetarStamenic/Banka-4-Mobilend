@@ -23,4 +23,12 @@
     <string name="kursna_lista">Kursna lista</string>
     <string name="credit">Treba vam kredit\nza 30 minuta?\nstvarno može.</string>
     <string name="vise">Saznaj više</string>
+    <string name="tip_racuna">Transakcijoni racun stanovnistvo</string>
+    <string name="broj_racuna">526-0000005960761-22</string>
+    <string name="detalji_racuna">Detalji računa</string>
+    <string name="transakcije">Transakcije</string>
+    <string name="naziv">Naziv</string>
+    <string name="stanje_racuna">Stanje računa</string>
+    <string name="rezervisana_sredstva">Rezervisana sredstva</string>
+    <string name="vlasnik">Vlasnik</string>
 </resources>

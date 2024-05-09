@@ -7,8 +7,8 @@ import androidx.fragment.app.FragmentPagerAdapter
 import rs.raf.banka_4.user.fragments.HomeFragment
 import rs.raf.banka_4.user.fragments.KarticeFragment
 import rs.raf.banka_4.user.fragments.PlatiFragment
-import rs.raf.banka_4.user.fragments.RacuniFragment
 import rs.raf.banka_4.user.fragments.ViseFragment
+import rs.raf.banka_4.user.fragments.racuni.RacuniFragment
 
 class PagerAdapter(
     private val context : Context,
