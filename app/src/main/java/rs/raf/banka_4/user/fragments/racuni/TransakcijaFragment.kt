@@ -5,17 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import rs.raf.banka_4.databinding.FragmentDetaljiRacunaBinding
+import rs.raf.banka_4.databinding.FragmentTransakcijeRecyclerBinding
 
-class DetaljiRacunaFragment : Fragment() {
-    private lateinit var binding: FragmentDetaljiRacunaBinding
+class TransakcijaFragment: Fragment() {
+    private lateinit var binding: FragmentTransakcijeRecyclerBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentDetaljiRacunaBinding.inflate(inflater,container,false)
+        binding = FragmentTransakcijeRecyclerBinding.inflate(inflater,container,false)
         return binding.root
     }
 
